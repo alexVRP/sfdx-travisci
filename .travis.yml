@@ -17,8 +17,8 @@ before_install:
 - export PATH=./sfdx/$(pwd):$PATH
 - sfdx --version
 - sfdx plugins --core
-- sfdx force:auth:jwt:grant --clientid 3MVG9G9pzCUSkzZuEVVR.zBBJZTfFYv4jtd5.upsihlpXnHDdbRCM8Cc1jPh0poph8piQA1zwQIVmhnyZSon4 --jwtkeyfile assets/server.key 
---username alexeyataev1@curious-panda-vijgt6.com --setdefaultdevhubusername -a HubOrg
+- sfdx force:auth:jwt:grant --clientid "3MVG9G9pzCUSkzZuEVVR.zBBJZTfFYv4jtd5.upsihlpXnHDdbRCM8Cc1jPh0poph8piQA1zwQIVmhnyZSon4" --jwtkeyfile assets/server.key 
+--username "alexeyataev1@curious-panda-vijgt6.com" --setdefaultdevhubusername -a HubOrg
 script:
 - sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait
   2
