@@ -17,7 +17,7 @@ before_install:
 - export PATH=./sfdx/$(pwd):$PATH
 - sfdx --version
 - sfdx plugins --core
-- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --username $USERNAME --jwtkeyfile assets/server.key --setdefaultdevhubusername -a DevOrg
+- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --username $USERNAME --jwtkeyfile $JWT_KEY_FILE --setdefaultdevhubusername -a DevOrg
 script:
 - sfdx force:org:create -v DevOrg -s -f config/project-scratch-def.json -a ciorg --wait 2
 - sfdx force:org:display -u ciorg
